@@ -1,0 +1,64 @@
+Structuration & Conteneurs
+	•	<div> — conteneur générique (utilisé partout)
+	•	<section> — section logique de page
+	•	<main> — contenu principal
+	•	<header> — en-tête de page ou section
+	•	<footer> — pied de page ou section
+	•	<nav> — menu de navigation
+
+⸻
+
+Texte
+	•	<h1>, <h2>, …, <h6> — titres (du plus grand au plus petit)
+	•	<p> — paragraphe
+	•	<span> — pour styliser un petit bout de texte
+	•	<strong>, <b> — texte important ou en gras
+	•	<em>, <i> — texte souligné ou en italique
+	•	<a> — lien (hypertexte)
+
+⸻
+
+Listes
+	•	<ul> — liste à puces (unordered list)
+	•	<ol> — liste numérotée (ordered list)
+	•	<li> — élément de liste
+
+⸻
+
+Médias
+	•	<img> — image
+	•	<video> — vidéo
+	•	<audio> — audio
+
+⸻
+
+Formulaires
+	•	<form> — formulaire
+	•	<input> — champ de saisie (texte, email, password, etc)
+	•	<textarea> — zone de texte multilignes
+	•	<select>, <option> — liste déroulante
+	•	<button> — bouton (peut être dans un formulaire ou seul)
+	•	<label> — étiquette pour champ
+
+⸻
+
+Tableaux
+	•	<table> — tableau
+	•	<tr> — ligne
+	•	<td> — cellule
+	•	<th> — cellule d’en-tête
+
+⸻
+
+Autres utiles
+	•	<br> — saut de ligne
+	•	<hr> — ligne horizontale (séparateur)
+	•	<pre> — texte préformaté (garde les espaces et retours à la ligne)
+	•	<code> — pour afficher du code
+
+⸻
+
+Tips pour t’en souvenir :
+	•	En général, tout ce que tu vois sur une page web est soit dans une <div>, soit dans une balise de structuration (<header>, <section>, etc).
+	•	Quand tu fais un menu, pense à <nav>.
+	•	Pour chaque formulaire, utilise <form>, <input>, <button>, etc.

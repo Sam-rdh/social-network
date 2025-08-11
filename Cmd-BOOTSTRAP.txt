@@ -1,0 +1,157 @@
+🚀 Bootstrap – Classes HTML essentielles
+
+-------------
+
+ 🚀 <!-- Card Bootstrap structure PRO -->🚀 
+
+<div class="card shadow mb-3" style="width: 18rem;">
+  <!-- Image du haut (facultative) -->
+  <img src="https://randomuser.me/api/portraits/men/32.jpg" class="card-img-top" alt="Avatar">
+
+  <!-- Corps de la carte -->
+  <div class="card-body">
+    <!-- Titre (ex: nom de l'utilisateur) -->
+    <h5 class="card-title">Nom Prénom</h5>
+    <!-- Texte ou description -->
+    <p class="card-text">
+      Texte d’exemple : description, bio, message, etc.
+    </p>
+    <!-- Bouton d’action -->
+    <button class="btn btn-primary btn-sm">Ajouter</button>
+  </div>
+</div>
+
+ou
+
+Explication rapide :
+	•	card → Le bloc principal
+	•	card-img-top → Image tout en haut (optionnelle)
+	•	card-body → Zone texte et actions
+	•	card-title → Titre (généralement Nom)
+	•	card-text → Texte, infos, bio
+	•	btn btn-primary → Bouton stylisé
+
+-------
+
+1. Grille et Flexbox (Layout)
+	•	container – Centre le contenu et ajoute des marges sur les côtés.
+	•	<div class="container">...</div>
+
+	•	row / col – Système de grille sur 12 colonnes.
+	•	<div class="row"><div class="col"></div></div>
+
+	•	d-flex – Active le mode flexbox (layout flexible).
+	•	<div class="d-flex">...</div>
+
+	•	flex-column – Colonne en flex (vertical).
+	•	<div class="d-flex flex-column">...</div>
+
+	•	flex-row – Ligne en flex (horizontal, par défaut).
+	•	justify-content-center – Centre horizontalement (flex).
+	•	align-items-center – Centre verticalement (flex).
+	•	align-self-center – Centre un seul élément sur l’axe vertical.
+	•	vh-100 – 100% de la hauteur de la fenêtre.
+	•	w-100 – 100% largeur parent.
+
+⸻
+
+2. Espacements (Marges et Paddings)
+	•	m-3 – Marge sur tous les côtés (3 = taille).
+	•	mt-4 – Marge en haut (t = top, b = bas, l = left, r = right, x = horizontal, y = vertical).
+	•	mb-2 – Marge en bas.
+	•	mx-auto – Marge automatique horizontale (centre un bloc).
+	•	p-4 – Padding sur tous les côtés.
+	•	px-2 – Padding horizontal.
+	•	py-1 – Padding vertical.
+
+⸻
+
+3. Texte et Titres
+	•	text-center – Centre le texte.
+	•	fw-bold – Texte en gras.
+	•	text-primary – Couleur primaire (bleu).
+	•	text-success, text-danger, text-warning – Vert, rouge, orange.
+	•	display-1 à display-6 – Titres très grands à moyens.
+	•	lead – Texte principal mis en avant.
+	•	small – Texte plus petit.
+	•	text-uppercase – Met le texte en MAJUSCULES.
+
+⸻
+
+4. Boutons et Formulaires
+	•	btn – Style bouton de base.
+	•	btn-primary – Bouton principal (bleu).
+	•	btn-secondary, btn-success, btn-danger, btn-warning, etc. – Autres couleurs.
+	•	btn-outline-* – Bouton contour, fond blanc, texte coloré.
+	•	btn-lg, btn-sm – Boutons grands/petits.
+	•	form-control – Style de base pour les inputs.
+	•	form-label – Style pour label.
+	•	form-check – Checkbox/Radio stylé.
+	•	input-group – Regroupe input + bouton.
+
+⸻
+
+    5. Cartes et Utilitaires
+	•	card – Boîte blanche avec ombre et arrondis.
+	•	card-body – Contenu principal de la carte.
+	•	shadow, shadow-sm, shadow-lg – Ajoute des ombres.
+	•	rounded, rounded-3 – Coins arrondis.
+	•	bg-light – Fond gris clair.
+	•	bg-primary – Fond bleu principal.
+	•	border, border-primary – Bordures simples ou colorées.
+
+
+⸻
+
+6. Listes et Tableaux
+	•	list-group – Liste stylée verticale.
+	•	list-group-item – Élément de liste stylé.
+	•	table – Table stylée de base.
+	•	table-striped – Lignes de table alternées.
+	•	table-hover – Lignes surlignées au survol.
+
+⸻
+
+7. Images
+	•	img-fluid – Image responsive (largeur 100%).
+	•	rounded-circle – Image ronde.
+	•	img-thumbnail – Image avec cadre.
+
+⸻
+
+8. Autres Utilitaires Pratiques
+	•	collapse – Pour afficher/masquer un bloc.
+	•	alert alert-success – Boîte d’alerte verte (succès), alert-danger, etc.
+	•	badge bg-primary – Badge coloré (nombre, notification).
+	•	progress – Barre de progression.
+	•	spinner-border – Loader/spinner d’attente.
+
+⸻
+
+9. Positionnement
+	•	position-relative / position-absolute – Positionnements CSS.
+	•	top-50, start-50, translate-middle – Centrage absolu (parent positionné relatif).
+
+⸻
+
+10. Exemples combinés
+    <div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div>
+        <h3 class="text-center fw-bold text-primary mb-4">Connexion</h3>
+        <div class="card shadow p-4">
+        <form>
+            <input class="form-control mb-3" type="text" placeholder="Identifiant">
+            <input class="form-control mb-3" type="password" placeholder="Mot de passe">
+            <button class="btn btn-primary w-100">Connexion</button>
+        </form>
+        </div>
+    </div>
+    </div>
+
+⸻
+
+📚 Conseils pour progresser
+	•	Combine les classes pour tout faire sans CSS perso !
+	•	Inspecte les éléments dans le navigateur pour tester en live.
+	•	Doc officielle : getbootstrap.com/docs/5.3
+	•	Plus tu pratiques, plus tu retiendras !

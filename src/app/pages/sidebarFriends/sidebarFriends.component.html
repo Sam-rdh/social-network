@@ -1,0 +1,17 @@
+<!-- <div *ngFor="let i of FriendsService.myFriends">
+    <span *ngIf="FriendsService.ifMyFriend"> {{i.firstName}} {{i.lastName}} </span>
+</div> -->
+
+
+    <h3>List :</h3>
+    <ul *ngFor="let i of FriendsService.myFriends | slice : 0 : FriendsService.visibleFriendsCount">
+
+    <li><app-friend-card-component [user]="i" [showBtnAdd]="false" [showBtnDelete]="false" [ifMyFriend]="!!FriendsService.ifMyFriend(i.id)">  </app-friend-card-component>
+    </li>
+    
+    </ul>
+    <button type="button" class="btn btn-primary" *ngIf="FriendsService.afficherMoreFriend " (click)="FriendsService.visibleFriendsCount = FriendsService.visibleFriendsCount + 4; FriendsService.myFriends.length < FriendsService.visibleFriendsCount ? FriendsService.afficherMoreFriend = false : null ">Afficher plus</button>
+
+
+
+

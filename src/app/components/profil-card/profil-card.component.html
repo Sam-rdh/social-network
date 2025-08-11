@@ -1,0 +1,15 @@
+<div>
+  <div>
+    <img [src]="user.image" alt="Photo de profil" width="120" height="120">
+    <h3>{{ user.firstName }} {{ user.lastName }}, {{ user.age }} ans</h3>
+    <p>{{ user.address.city }}, {{ user.address.country }}</p>
+    <p>{{ user.company.title }} chez {{ user.company.name }}</p>
+    <p>{{ user.university }}</p>
+    <p *ngIf="user.email">Email : {{ user.email }}</p>
+    <p *ngIf="user.phone">Téléphone : {{ user.phone }}</p>
+  </div>
+
+  <button *ngIf="AfficheBtnRetour" class="btn btn-primary" type="button" (click)="this.ui.onBtnRetour()">Retour</button>
+</div>
+
+  <!-- <button class="btn btn-primary" type="button" (click)="onCloseProfilFriend(); ui.openAllMyFriends(); ui.openSidebar();">Retour</button> -->

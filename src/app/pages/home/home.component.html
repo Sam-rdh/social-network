@@ -1,0 +1,49 @@
+<div class="d-flex flex-column align-items-center min-vh-100 py-5">
+
+  <!-- Zone de création de post -->
+  <div class="card shadow-sm mb-4 w-100" style="max-width: 540px;">
+    <div class="card-body">
+      <textarea class="form-control mb-3" rows="3" [(ngModel)]="content" placeholder="What's on your mind?"></textarea>
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-primary px-4" (click)="postsService.addPost(content)">Publier</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="ui.isLoading" class="loader"></div>
+  <!-- Fil d'actualité -->
+  <div class="w-100" style="max-width: 540px;" *ngIf="!ui.isLoading">
+    <div *ngFor="let post of (postsService.postSubject$ | async) | slice:0:visiblePostsCount" class="card mb-3 shadow-sm">
+      <div class="card-body d-flex align-items-start">
+        <!-- Avatar de l’auteur -->
+        <img *ngIf="getPictureById(idDivise10(post.userId!))"
+             [src]="getPictureById(idDivise10(post.userId!))"
+             class="rounded-circle me-3"
+             alt="Avatar"
+             style="width: 48px; height: 48px; object-fit: cover;">
+        <div> 
+          <h6 class="card-title mb-1">
+            <a href="#" (click)="goToFriendProfil(idDivise10(post.userId!)) ;$event.preventDefault();"> {{ friendsService.idGetFriendSelected(idDivise10(post.userId!))?.firstName }} {{ friendsService.idGetFriendSelected(idDivise10(post.userId!))?.lastName }}</a>
+          </h6>
+          <p class="card-text mb-2">{{ post.body }}</p>
+          <!-- <button (click)="postsService.like(post.id, post.userId!)" class="btn heart" ><i class="fa fa-heart">❤️</i></button>
+          <small class="text-muted">{{ post.reactions.likes}}</small>
+          <button (click)="postsService.dislike(post.id, post.userId!)" class="btn heart" ><i class="fa fa-heart">❤️</i></button>
+        -->
+
+        <small class="text-muted">{{ post.reactions.likes}}</small>
+        <button (click)="postsService.toggleLike(post.id, post.userId!)">
+        <span *ngIf="post.likedBy.includes(post.userId!)">💔</span>
+        <span *ngIf="!post.likedBy.includes(post.userId!)">❤️</span>
+        </button>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+          <button class="btn btn-primary" type="button" (click)="visiblePostsCount = visiblePostsCount + 4">Afficher plus</button>
+
+
+</div>

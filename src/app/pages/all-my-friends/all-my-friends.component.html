@@ -1,0 +1,16 @@
+<div *ngIf="ui.allMyFriendsVisible$ | async">
+    <div class="col-12 col-md-8 mx-auto">
+        <div class="card-body">
+            <div class="card mb-3" *ngFor="let i of friendsService.myFriends">
+                
+                    <app-friend-card-component  (PushName)="ui.closeSidebar()" [showBtnAdd]="false" [user]="i" (deleteFriend)="friendsService.deleteFriend(i.id)" [ifMyFriend]="!!friendsService.ifMyFriend(i.id)"></app-friend-card-component>
+                
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- <app-profil-card *ngIf="!(ui.sidebarVisible$ | async)" [user]="profilFriendChoice"></app-profil-card> -->
+
+<!-- <app-profil-card [user]="profilFriendChoice"></app-profil-card> -->

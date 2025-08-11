@@ -1,0 +1,10 @@
+<div class="card-body">
+
+    <h5 class="card-title"><a href="#" (click)="goToFriendProfil(user.id) ;$event.preventDefault(); onPushName();  "> {{user.firstName}} {{user.lastName}}</a>&nbsp;    
+        <button class="btn btn-primary"  type="button" (click)="onAddFriends()" *ngIf="showBtnAdd">add</button> 
+        <button class="btn btn-danger" type="button" (click)="onDeleteFriend()" *ngIf="ifMyFriend && showBtnDelete" >Delete</button> 
+    </h5> 
+    
+</div>
+
+

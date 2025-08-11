@@ -1,0 +1,13 @@
+
+<div class="d-flex flex-column justify-content-center align-items-center vh-100 bg-light gap-3">
+    
+    <h3 class="text-center fw-bold display-6 text-primary">Login</h3>
+    <div class="card shadow p-4">
+        <div>
+            <input [(ngModel)] = "username" class="form-control mb-3" type="text" placeholder="Identifiant">
+            <input [(ngModel)]= "password" class= "form-control mb-3" type="text" placeholder="Mot de passe">
+            <input (click)="loginUser()" class="btn btn-primary" type="button" value="Connexion">
+        </div>
+        <h3 *ngIf="messageErreur">{{messageErreur}}</h3>
+    </div>
+</div>

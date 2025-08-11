@@ -1,0 +1,88 @@
+
+
+
+src/
+  app/
+    features/
+      login/
+        login.component.ts
+        login.component.html
+        login.component.scss
+      home/
+        home.component.ts
+        home.component.html
+        home.component.scss
+      profile/
+        profile.component.ts
+        profile.component.html
+        profile.component.scss
+      friends/
+        friends.component.ts
+        friends.component.html
+        friends.component.scss
+    shared/
+      user-card/
+        user-card.component.ts
+      friend-list/
+        friend-list.component.ts
+    core/
+      auth.service.ts
+      user.service.ts
+
+
+_________________
+
+
+src/
+│
+├── app/
+│   ├── core/
+│   │   ├── services/
+│   │   │   ├── auth.service.ts
+│   │   │   └── api.service.ts
+│   │   ├── guards/
+│   │   │   └── auth.guard.ts
+│   │   └── interceptors/
+│   │       └── token.interceptor.ts
+│   │
+│   ├── shared/
+│   │   ├── components/
+│   │   │   ├── button/
+│   │   │   │   └── button.component.ts
+│   │   │   └── card/
+│   │   │       └── card.component.ts
+│   │   ├── pipes/
+│   │   │   └── capitalize.pipe.ts
+│   │   └── directives/
+│   │       └── autofocus.directive.ts
+│   │
+│   ├── features/
+│   │   ├── auth/
+│   │   │   ├── login/
+│   │   │   │   ├── login.component.ts
+│   │   │   │   ├── login.component.html
+│   │   │   │   └── login.component.scss
+│   │   │   └── register/
+│   │   │       ├── register.component.ts
+│   │   │       ├── register.component.html
+│   │   │       └── register.component.scss
+│   │   ├── feed/
+│   │   │   ├── feed.component.ts
+│   │   │   └── feed.component.html
+│   │   ├── profile/
+│   │   │   ├── profile.component.ts
+│   │   │   └── profile.component.html
+│   │   └── ... (autres features : messages, notifications...)
+│   │
+│   ├── app.component.ts
+│   └── app.module.ts
+│
+├── assets/
+│   ├── logo.png
+│   └── images/
+│
+├── environments/
+│   ├── environment.ts
+│   └── environment.prod.ts
+│
+└── index.html
