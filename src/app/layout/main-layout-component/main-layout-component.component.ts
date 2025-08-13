@@ -19,12 +19,24 @@ export class MainLayoutComponentComponent implements OnInit {
 
   ngOnInit(): void {
 
-   this.auth.getCurrentUserByToken();
+  //  this.auth.getCurrentUserByToken();
 
-   this.router.events.subscribe(
-    (event) => {  if(event instanceof NavigationEnd){  if((this.router.url.startsWith('/friends'))){this.ui.closeSidebar()} else{this.ui.openSidebar()} }    }
-   )
+  //  this.router.events.subscribe(
+  //   (event) => {  if(event instanceof NavigationEnd){  if((this.router.url.startsWith('/friends'))){this.ui.closeSidebar()} else{this.ui.openSidebar()} }    }
+  //  )
   
+  this.auth.getCurrentUserByToken();
+
+  this.router.events.subscribe(event => {
+    if (event instanceof NavigationEnd) {
+      // Sidebar masquée sur /friends ET /contact, visible ailleurs
+      if (this.router.url.startsWith('/friends') || this.router.url.startsWith('/contact')) {
+        this.ui.closeSidebar();
+      } else {
+        this.ui.openSidebar();
+      }
+    }
+  });
 
    
   }

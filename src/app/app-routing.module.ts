@@ -13,7 +13,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 const routes: Routes = [
   {path : '', 
   component : MainLayoutComponentComponent,
-  // canActivate : [AuthGuard],
+  canActivate : [AuthGuard],
   children :[
       {path : '', redirectTo : 'home', pathMatch: 'full' },
       {path : 'home', component : HomeComponent},

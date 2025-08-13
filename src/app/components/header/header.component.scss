@@ -1,0 +1,17 @@
+.main-header{
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  color:#fff;
+  .nav-link{
+    color:#fff !important;
+    font-weight:600;
+    border-radius: 999px;
+    margin-left:.3rem;
+    transition: background .2s ease;
+  }
+  .nav-link:hover,
+  .nav-link.active{
+    background: rgba(255,255,255,.18);
+    color:#fff !important;
+  }
+}
+.fw-800{ font-weight:800; }

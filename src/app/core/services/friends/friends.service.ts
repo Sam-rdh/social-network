@@ -64,7 +64,7 @@ export class FriendsService {
         tab = tab.filter(n => n.id != this.auth.getCurrentUser()?.id);
         
 
-        this.allUsers = tab
+        this.allUsers = data.users;
       },
       error : (err) => {}
     })

@@ -1,13 +1,29 @@
-<div class="d-flex mt-3 mb-3 input-group input-group-lg">
-    <span class="input-group-text">Research</span>
-    <input class="form-control" type="text" [(ngModel)]="friendsService.searchValue">
+<div class="container-narrow section">
+  <div class="card rounded-xxl soft-shadow mb-3">
+    <div class="card-body">
+      <div class="input-group input-group-lg">
+        <span class="input-group-text">Recherche</span>
+        <input class="form-control" type="text" [(ngModel)]="friendsService.searchValue" placeholder="Nom, prénom…">
+      </div>
+    </div>
+  </div>
+
+  <div class="card d-flex flex-column justify-content-center mb-2" *ngFor="let i of friendsService.allUsers | userFilter :friendsService.searchValue | slice:0:friendsService.visibleResearchFriendsCount">
+    <div class="card-body">
+      <app-friend-card-component
+        [user]="i"
+        [ifMyFriend]="ifMyFriend(i.id)"
+        (addFriends)="addFriends($event)"
+        (deleteFriend)="deleteFriend($event)">
+      </app-friend-card-component>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <button class="btn btn-primary" type="button"
+            *ngIf="friendsService.allUsers!.length > friendsService.visibleResearchFriendsCount"
+            (click)="friendsService.visibleResearchFriendsCount = friendsService.visibleResearchFriendsCount + 4">
+      Afficher plus
+    </button>
+  </div>
 </div>
-
-<div *ngFor="let i of friendsService.allUsers | userFilter :friendsService.searchValue | slice:0:friendsService.visibleResearchFriendsCount" class=" card d-flex flex-column justify-content-center mb-1 mt-1  col-12 mx-auto border border-danger" >
-
-<app-friend-card-component [user]="i" [ifMyFriend]="ifMyFriend(i.id)" (addFriends)="addFriends($event)" (deleteFriend)="deleteFriend($event)" ></app-friend-card-component>
-   
-</div>
-
-<button class="btn btn-primary" type="button" *ngIf="friendsService.allUsers!.length >friendsService.visibleResearchFriendsCount ? true : false" (click)="friendsService.visibleResearchFriendsCount = friendsService.visibleResearchFriendsCount + 4">Afficher plus</button>
-

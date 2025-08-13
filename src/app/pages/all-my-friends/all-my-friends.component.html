@@ -1,16 +1,23 @@
-<div *ngIf="ui.allMyFriendsVisible$ | async">
-    <div class="col-12 col-md-8 mx-auto">
+<div *ngIf="ui.allMyFriendsVisible$ | async" class="container-narrow section">
+  <div class="card rounded-xxl soft-shadow">
+    <div class="card-body">
+      <h4 class="mb-4 brand-gradient fw-800">Mes amis</h4>
+
+      <div class="card mb-3" *ngFor="let i of friendsService.myFriends">
         <div class="card-body">
-            <div class="card mb-3" *ngFor="let i of friendsService.myFriends">
-                
-                    <app-friend-card-component  (PushName)="ui.closeSidebar()" [showBtnAdd]="false" [user]="i" (deleteFriend)="friendsService.deleteFriend(i.id)" [ifMyFriend]="!!friendsService.ifMyFriend(i.id)"></app-friend-card-component>
-                
-            </div>
-
+          <app-friend-card-component
+            (PushName)="ui.closeSidebar()"
+            [showBtnAdd]="false"
+            [user]="i"
+            (deleteFriend)="friendsService.deleteFriend(i.id)"
+            [ifMyFriend]="!!friendsService.ifMyFriend(i.id)">
+          </app-friend-card-component>
         </div>
+      </div>
+
+      <div *ngIf="!friendsService.myFriends.length" class="text-center text-muted">
+        Tu n’as pas encore d’ami. Va dans la recherche pour en ajouter !
+      </div>
     </div>
+  </div>
 </div>
-
-<!-- <app-profil-card *ngIf="!(ui.sidebarVisible$ | async)" [user]="profilFriendChoice"></app-profil-card> -->
-
-<!-- <app-profil-card [user]="profilFriendChoice"></app-profil-card> -->

@@ -1,15 +1,15 @@
-<div>
-  <div>
-    <img [src]="user.image" alt="Photo de profil" width="120" height="120">
-    <h3>{{ user.firstName }} {{ user.lastName }}, {{ user.age }} ans</h3>
-    <p>{{ user.address.city }}, {{ user.address.country }}</p>
-    <p>{{ user.company.title }} chez {{ user.company.name }}</p>
-    <p>{{ user.university }}</p>
-    <p *ngIf="user.email">Email : {{ user.email }}</p>
-    <p *ngIf="user.phone">Téléphone : {{ user.phone }}</p>
+<div class="card rounded-xxl soft-shadow">
+  <div class="card-body d-flex flex-column flex-md-row align-items-start gap-4">
+    <img [src]="user.image" alt="Photo de profil" width="140" height="140" class="avatar" style="width:140px;height:140px;border-width:4px;">
+    <div class="flex-grow-1">
+      <h3 class="mb-1">{{ user.firstName }} {{ user.lastName }}, {{ user.age }} ans</h3>
+      <p class="mb-1">{{ user.address.city }}, {{ user.address.country }}</p>
+      <p class="mb-1">{{ user.company.title }} chez {{ user.company.name }}</p>
+      <p class="mb-1">{{ user.university }}</p>
+      <p class="mb-1" *ngIf="user.email">Email : <strong>{{ user.email }}</strong></p>
+      <p class="mb-3" *ngIf="user.phone">Téléphone : <strong>{{ user.phone }}</strong></p>
+
+      <button *ngIf="AfficheBtnRetour" class="btn btn-primary" type="button" (click)="this.ui.onBtnRetour()">Retour</button>
+    </div>
   </div>
-
-  <button *ngIf="AfficheBtnRetour" class="btn btn-primary" type="button" (click)="this.ui.onBtnRetour()">Retour</button>
 </div>
-
-  <!-- <button class="btn btn-primary" type="button" (click)="onCloseProfilFriend(); ui.openAllMyFriends(); ui.openSidebar();">Retour</button> -->

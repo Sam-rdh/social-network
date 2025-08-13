@@ -1,15 +1,17 @@
 <div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> <a href="/"
-            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> <svg
-                class="bi me-2" width="40" height="32" aria-hidden="true">
-                <use xlink:href="#bootstrap"></use>
-            </svg> <span class="fs-4">Simple header</span> </a>
-        <ul class="nav nav-pills">
-            <li class="nav-item"><a routerLink="/home" class="nav-link" routerLinkActive="active" aria-current="page">Accueil</a></li>
-            <li class="nav-item"><a routerLink="/profil" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Profil</a></li>
-            <li class="nav-item"><a routerLink="/friends" class="nav-link" routerLinkActive="active">Amis</a></li>
-            <li class="nav-item"><a routerLink="/research" class="nav-link" [class.active]="(ui.currentSection$ | async) === 'research' ">Recherche</a></li>
-            <li class="nav-item"><a href="" class="nav-link" routerLinkActive="active" (click)="auth.logout()">Deconnecter</a></li>
-        </ul>
-    </header>
+  <header class="main-header d-flex flex-wrap justify-content-between align-items-center py-3 mb-3 rounded-xxl px-3 soft-shadow">
+    <a routerLink="/" class="d-flex align-items-center gap-2 text-decoration-none">
+      <span class="fw-800 fs-4 brand-gradient">SocialNetwork</span>
+    </a>
+
+    <ul class="nav nav-pills align-items-center">
+      <li class="nav-item"><a routerLink="/home" class="nav-link" routerLinkActive="active" aria-current="page">Accueil</a></li>
+      <li class="nav-item"><a routerLink="/profil" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Profil</a></li>
+      <li class="nav-item"><a routerLink="/friends" class="nav-link" routerLinkActive="active">Amis</a></li>
+      <li class="nav-item">
+        <a routerLink="/research" class="nav-link" [class.active]="(ui.currentSection$ | async) === 'research'">Recherche</a>
+      </li>
+      <li class="nav-item"><a href="" class="nav-link" (click)="auth.logout()">Déconnexion</a></li>
+    </ul>
+  </header>
 </div>

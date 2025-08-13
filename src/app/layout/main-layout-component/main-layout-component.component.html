@@ -1,23 +1,28 @@
-
-
 <div class="d-flex flex-column min-vh-100">
   <app-header></app-header>
-  <div class="flex-grow-1">
-        <div class="container">
-    <div class="row">
-        <!-- Colonne de gauche (amis) -->
-         
-        <div class="col-2" *ngIf="ui.sidebarVisible$ | async">
-          <app-sidebar-friends (friendSelected)="valueFriendSelected = $event"></app-sidebar-friends>
-         
-        </div>
-        <!-- Colonne centrale (page dynamique) -->
-        <div class="col-10">
-        <router-outlet *ngIf="!(ui.profilFriendSelect$ |async)"></router-outlet>
-        <app-profil-card *ngIf="ui.profilFriendSelect$ | async" [user]="valueFriendSelected" (btnRetour)="ui.closeProfilFriendSelect()"></app-profil-card>
-        </div>
+
+  <main class="flex-grow-1 py-4">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Sidebar -->
+        <aside class="col-12 col-md-3" *ngIf="ui.sidebarVisible$ | async">
+          <div class="card rounded-xxl soft-shadow">
+            <div class="card-body">
+              <app-sidebar-friends (friendSelected)="valueFriendSelected = $event"></app-sidebar-friends>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Contenu -->
+        <section class="col-12" [class.col-md-9]="ui.sidebarVisible$ | async">
+          <router-outlet *ngIf="!(ui.profilFriendSelect$ | async)"></router-outlet>
+          <app-profil-card *ngIf="ui.profilFriendSelect$ | async"
+                           [user]="valueFriendSelected"
+                           (btnRetour)="ui.closeProfilFriendSelect()"></app-profil-card>
+        </section>
+      </div>
     </div>
-    </div>
-  </div>
+  </main>
+
   <app-footer></app-footer>
 </div>

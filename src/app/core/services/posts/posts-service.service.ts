@@ -32,14 +32,13 @@ export class PostsServiceService {
     this.fetchPosts().subscribe({
       next : (data) => {
 
-        this.uiService.isLoading = false;
         const postsWithLikedBy = data.posts.map(p => ({
           ...p,
           likedBy: []  // on initialise vide pour éviter undefined
         }));
         this.postSubject.next(postsWithLikedBy);
       },
-      error : (err) => {this.uiService.isLoading = false}
+      error : (err) => {}
     })
     }
     this.getFetchPost++;
@@ -56,7 +55,7 @@ export class PostsServiceService {
                     dislikes: 0},
         likedBy : [],
         views: 0,
-        userId : this.authService.getCurrentUser()?.id,
+        userId : (this.authService.getCurrentUser()?.id ?? 0) * 10,
       }  
        this.postSubject.next([postWrite, ...this.postSubject.value]);
  }

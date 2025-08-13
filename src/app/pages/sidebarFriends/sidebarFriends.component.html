@@ -1,17 +1,20 @@
-<!-- <div *ngFor="let i of FriendsService.myFriends">
-    <span *ngIf="FriendsService.ifMyFriend"> {{i.firstName}} {{i.lastName}} </span>
-</div> -->
+<h5 class="mb-3 brand-gradient fw-800">Mes amis</h5>
 
+<ul class="list-unstyled d-flex flex-column gap-2 mb-3">
+  <li *ngFor="let i of FriendsService.myFriends | slice : 0 : FriendsService.visibleFriendsCount" class="card">
+    <div class="card-body py-2">
+      <app-friend-card-component
+        [user]="i"
+        [showBtnAdd]="false"
+        [showBtnDelete]="false"
+        [ifMyFriend]="!!FriendsService.ifMyFriend(i.id)">
+      </app-friend-card-component>
+    </div>
+  </li>
+</ul>
 
-    <h3>List :</h3>
-    <ul *ngFor="let i of FriendsService.myFriends | slice : 0 : FriendsService.visibleFriendsCount">
-
-    <li><app-friend-card-component [user]="i" [showBtnAdd]="false" [showBtnDelete]="false" [ifMyFriend]="!!FriendsService.ifMyFriend(i.id)">  </app-friend-card-component>
-    </li>
-    
-    </ul>
-    <button type="button" class="btn btn-primary" *ngIf="FriendsService.afficherMoreFriend " (click)="FriendsService.visibleFriendsCount = FriendsService.visibleFriendsCount + 4; FriendsService.myFriends.length < FriendsService.visibleFriendsCount ? FriendsService.afficherMoreFriend = false : null ">Afficher plus</button>
-
-
-
-
+<button type="button" class="btn btn-primary w-100"
+        *ngIf="FriendsService.afficherMoreFriend"
+        (click)="FriendsService.visibleFriendsCount = FriendsService.visibleFriendsCount + 4; FriendsService.myFriends.length < FriendsService.visibleFriendsCount ? FriendsService.afficherMoreFriend = false : null">
+  Afficher plus
+</button>
