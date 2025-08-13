@@ -7,6 +7,7 @@ import { ResearchFriendsComponent } from './pages/research-friends/research-frie
 import { AllMyFriendsComponent } from './pages/all-my-friends/all-my-friends.component';
 import { ProfilComponent } from './pages/profil/profil.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { ContactComponent } from './pages/contact/contact.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
       {path : 'profil/:id', component : ProfilComponent},
       {path : 'friends', component: AllMyFriendsComponent},
       {path : 'research', component : ResearchFriendsComponent},
+      {path : `contact`, component : ContactComponent}
     ]
   },
   {path : 'login', component: LoginComponent},
